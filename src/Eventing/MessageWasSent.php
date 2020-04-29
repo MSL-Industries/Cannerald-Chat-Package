@@ -2,11 +2,16 @@
 
 namespace Musonza\Chat\Eventing;
 
+use Illuminate\Broadcasting\Channel;
+use Illuminate\Broadcasting\InteractsWithSockets;
+use Illuminate\Broadcasting\PrivateChannel;
+use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
+use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
 use Musonza\Chat\Models\Message;
 
-class MessageWasSent extends Event
+class MessageWasSent extends Event implements ShouldQueue
 {
     use Dispatchable;
     use InteractsWithSockets;
@@ -17,4 +22,5 @@ class MessageWasSent extends Event
     {
         $this->message = $message;
     }
+
 }
