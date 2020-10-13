@@ -11,7 +11,7 @@ use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
 use Musonza\Chat\Models\Message;
 
-class MessageWasSent extends Event implements ShouldQueue
+class MessageWasSent extends Event
 {
     use Dispatchable;
     use InteractsWithSockets;
